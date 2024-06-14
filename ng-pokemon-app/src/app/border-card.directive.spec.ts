@@ -1,5 +1,5 @@
 import { ElementRef } from '@angular/core';
-import { BorderCardDirective } from './border-card.directive';
+import { BorderCardDirective } from './pokemon/border-card.directive';
 
 describe('BorderCardDirective', () => {
   it('should create an instance', () => {
