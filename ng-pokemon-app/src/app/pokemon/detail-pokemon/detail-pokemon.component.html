@@ -1,9 +1,9 @@
 <div *ngIf="pokemon" class="row">
     <div class="col s12 m8 offset-m2">
     <h2 class="header center">{{ pokemon.name }}</h2>
-    <div class="card horizontal hoverable">
+    <div class="card horizontal hoverable" style="height:430px">
       <div class="card-image" style="margin:auto ; padding-left: 30px">
-        <img [src]="pokemon.picture" style="width: 300px ; height: 300px;">
+        <img [src]="pokemon.picture" style="width: 300px">
       </div>
       <div class="card-stacked">
         <div class="card-content">
@@ -35,7 +35,8 @@
           </table>
         </div>
         <div class="card-action">
-          <a (click)="goBack()">Retour</a>
+          <a (click)="goToPokemonList()">Retour</a>
+          <a (click)="goToEditPokemon(pokemon)">Editer</a>
         </div>
       </div>
     </div>
