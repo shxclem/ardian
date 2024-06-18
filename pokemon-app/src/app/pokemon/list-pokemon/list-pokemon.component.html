@@ -1,9 +1,9 @@
 <div class="container">
-    <div class="row">
-      <div *ngFor="let pokemon of pokemonList" class="col m4 s6">
-        <div class="card horizontal" pkmnBorderCard>
-          <div (click)="goToPokemon(pokemon)" class="card-image" style="margin:auto ; padding-left: 5px">
-            <img [src]="pokemon.picture" style="width: 150px"> 
+  <div class="row">
+    <div *ngFor="let pokemon of pokemonList" class="col m4 s6">
+      <div class="card horizontal" pkmnBorderCard>
+        <div (click)="goToPokemon(pokemon)" class="card-image" style="margin:auto ; padding-left: 5px">
+          <img [src]="pokemon.picture" style="width: 150px"> 
         </div> 
         <div class="card-stacked">
           <div class="card-content">
@@ -17,3 +17,4 @@
       </div>
     </div>
   </div>
+</div>
