@@ -1,20 +1,48 @@
 import { Injectable } from '@angular/core';
-import { POKEMONS } from './mock-pokemon-list';
 import { Pokemon } from './pokemon';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable, catchError, of, tap } from 'rxjs';
 
 @Injectable()
 export class PokemonService {
-  getPokemon(arg0: number): Pokemon {
-    throw new Error('Method not implemented.');
+
+  constructor(private http: HttpClient) { }
+
+  getPokemonList(): Observable<Pokemon[]> {
+    return this.http.get<Pokemon[]>('api/POKEMONS').pipe(
+      tap((response) => this.log(response)),
+      catchError((error) => this.handleError(error, []))
+    );
   }
 
-  getPokemonList(): Pokemon[] {
-    return POKEMONS;
+  getPokemonById(pokemonId: number): Observable<Pokemon|undefined> {
+    return this.http.get<Pokemon>('api/POKEMONS/' + pokemonId).pipe(
+      tap((response) => this.log(response)),
+      catchError((error) => this.handleError(error, undefined))
+    );
+    
   }
 
-  getPokemonById(pokemonId: number): Pokemon | undefined {
-    return POKEMONS.find(pokemon => pokemon.id == pokemonId)
+  updatePokemon(pokemon: Pokemon): Observable<Pokemon|undefined> {
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    };
+
+    return this.http.put<Pokemon>('api/pokemons/' + pokemon, httpOptions).pipe(
+      tap((response) => this.log(response)),
+      catchError((error) => this.handleError(error, undefined))
+    );
   }
+
+  private log(repsonse: Pokemon[]|Pokemon|undefined) {
+    console.table(repsonse);
+  }
+
+  private handleError(error: Error, errorValue: any) {
+    console.error(error);
+    return of(errorValue);
+  }
+
 
   getPokemonTypeList(): string[] {
     return [
