@@ -6,10 +6,10 @@
           <img [src]="pokemon.picture" style="width: 150px"> 
         </div> 
         <div class="card-stacked">
-          <div class="card-content">
-            <p>{{ pokemon.name }}</p>
-            <p><small>{{ pokemon.created | date:"dd/MM/yyyy" }}</small></p>
-            <span *ngFor="let type of pokemon.types" class="{{ type | pokemonTypeColor }}" style="margin-top: 4px">
+          <div class="card-content" style="display: grid;">
+            <p style="font-weight: 650;">{{ pokemon.name }}</p>
+            <p>{{ pokemon.created | date:"dd/MM/yyyy" }}</p>
+            <span *ngFor="let type of pokemon.types" class="{{ type | pokemonTypeColor }}" style="display: flex; justify-content: center; align-items: center;">
               {{ type }}
             </span>
           </div>
