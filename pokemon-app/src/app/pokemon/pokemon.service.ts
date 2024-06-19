@@ -23,15 +23,41 @@ export class PokemonService {
     
   }
 
-  updatePokemon(pokemon: Pokemon): Observable<Pokemon|undefined> {
+  updatePokemon(pokemon: Pokemon): Observable<null> {
     const httpOptions = {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     };
 
-    return this.http.put<Pokemon>('api/pokemons/' + pokemon, httpOptions).pipe(
+    return this.http.put<Pokemon>('api/POKEMONS/', pokemon, httpOptions).pipe(
       tap((response) => this.log(response)),
-      catchError((error) => this.handleError(error, undefined))
+      catchError((error) => this.handleError(error, null))
     );
+  }
+
+  searchPokemonList(term: string): Observable<Pokemon[]> {
+    return this.http.get<Pokemon[]>(`api/POKEMONS/?name=${term}`).pipe(
+      tap((response) => this.log(response)),
+      catchError((error) => this.handleError(error, []))
+    );
+    
+  }
+
+  deletePokemonById(pokemonId: number): Observable<null> {
+    return this.http.delete<Pokemon>('api/POKEMONS/' + pokemonId).pipe(
+      tap((response) => this.log(response)),
+      catchError((error) => this.handleError(error, null))
+    );
+  }
+
+  addPokemon(pokemon: Pokemon): Observable<Pokemon> {
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    };
+
+    return this.http.post<Pokemon>('api/POKEMONS/', pokemon, httpOptions).pipe(
+      tap((response) => this.log(response)),
+      catchError((error) => this.handleError(error, null))
+    )
   }
 
   private log(repsonse: Pokemon[]|Pokemon|undefined) {
