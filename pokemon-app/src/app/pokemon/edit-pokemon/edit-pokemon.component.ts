@@ -10,7 +10,7 @@ import { PokemonService } from '../pokemon.service';
       Editer {{ pokemon?.name }} !
     </h3>
     <p *ngIf="pokemon" class="center">
-      <img [src]="pokemon.picture" style="width: 350px">
+      <img [src]="pokemon.picture" style="width: 300px">
     </p>
     <app-pokemon-form *ngIf="pokemon" [pokemon]="pokemon"></app-pokemon-form>
   `
