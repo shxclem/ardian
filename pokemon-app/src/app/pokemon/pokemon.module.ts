@@ -13,6 +13,7 @@ import { AddPokemonComponent } from './add-pokemon/add-pokemon.component';
 import { SearchPokemonComponent } from './search-pokemon/search-pokemon.component';
 import { LoaderComponent } from './loader/loader.component';
 import { AuthGuard } from '../auth.guard';
+import { AppFooterComponent } from '../app-footer.component';
 
 const pokemonRoutes: Routes = [
   { path: 'edit/pokemon/:id', component: EditPokemonComponent, canActivate: [AuthGuard] },
@@ -31,7 +32,8 @@ const pokemonRoutes: Routes = [
     EditPokemonComponent,
     AddPokemonComponent,
     SearchPokemonComponent,
-    LoaderComponent
+    LoaderComponent,
+    AppFooterComponent
   ],
   imports: [
     CommonModule,

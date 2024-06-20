@@ -1,5 +1,5 @@
 <div *ngIf="pokemon" class="row">
-    <div class="col s12 m8 offset-m2">
+  <div class="col s12 m8 offset-m2">
     <h2 class="header center">{{ pokemon.name }}</h2>
     <div class="card horizontal hoverable" style="height:430px">
       <div class="card-image" style="margin:auto ; padding-left: 30px">
@@ -41,8 +41,9 @@
         </div>
       </div>
     </div>
-    </div>
-    </div>
-    <h4 *ngIf='!pokemon' class="center">
-      <app-loader></app-loader>
-    </h4>
+  </div>
+</div>
+  <h4 *ngIf='!pokemon' class="center">
+    <app-loader></app-loader>
+  </h4>
+<app-app-footer></app-app-footer>
