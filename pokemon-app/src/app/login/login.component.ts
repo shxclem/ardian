@@ -6,19 +6,19 @@ import { Router } from '@angular/router';
   selector: 'app-login',
   template: `
   <div class='row'>
-    <div class="col s12 m4 offset-m4">
+    <div class="col s12 m4 offset-m4" style="padding-top: 30px">
       <div class="card hoverable">
         <div class="card-content center">
-          <span class="card-title">Page de connexion</span>
+          <span class="card-title" style="font-weight: 500 ; text-decoration: underline #26a69a">Page de connexion :</span>
           <p><em>{{ message }}</em></p>
         </div>
         <form #loginForm="ngForm">
           <div>
-            <label for="name">Name</label>
+            <label for="name" style="padding-left: 3px">Name</label>
             <input type="text" id="name" [(ngModel)]="name" name="name" required>
           </div>
           <div>
-            <label for="password">Password</label>
+            <label for="password" style="padding-left: 3px">Password</label>
             <input type="password" id="password" [(ngModel)]="password" name="password" required>
           </div>
         </form>
