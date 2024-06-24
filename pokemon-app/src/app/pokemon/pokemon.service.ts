@@ -77,12 +77,19 @@ export class PokemonService {
       'Eau',
       'Insecte',
       'Normal',
-      'Electrik',
       'Poison',
       'Fée',
-      'Vol',
+      'Psy',
+      'Electrik',
       'Combat',
-      'Psy'
+      'Sol',
+      'Roche',
+      'Glace',
+      'Dragon',
+      'Acier',
+      'Spectre',
+      'Ténèbres',
+      'Vol'
     ]
   }
 }

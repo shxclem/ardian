@@ -108,5 +108,68 @@ export const POKEMONS: Pokemon[] = [
         picture: "https://www.pokepedia.fr/images/f/f6/Goupix-RFVF.png",
         types: ["Feu"], 
         created: new Date()
+    },
+    {
+        id: 13,
+        hp: 15,
+        cp: 5,
+        name: "Rondoudou",
+        picture: "https://www.pokepedia.fr/images/c/cd/Rondoudou-RFVF.png",
+        types: ["Normal", "Fée"],
+        created: new Date()
+    },
+    {
+        id: 14,
+        hp: 23,
+        cp: 7,
+        name: "Nosferapti",
+        picture: "https://www.pokepedia.fr/images/2/2b/Nosferapti-RFVF.png",
+        types: ["Poison", "Vol"],
+        created: new Date()
+    },
+    {
+        id: 15,
+        hp: 18,
+        cp: 6,
+        name: "Mystherbe",
+        picture: "https://www.pokepedia.fr/images/3/39/Mystherbe-RFVF.png",
+        types: ["Plante", "Poison"],
+        created: new Date()
+    },
+    {
+        id: 16,
+        hp: 14,
+        cp: 5,
+        name: "Tentacool",
+        picture: "https://www.pokepedia.fr/images/d/de/Tentacool-RFVF.png",
+        types: ["Eau", "Poison"],
+        created: new Date()
+    },
+    {
+        id: 17,
+        hp: 16,
+        cp: 3,
+        name: "Racaillou",
+        picture: "https://www.pokepedia.fr/images/b/b2/Racaillou-RFVF.png",
+        types: ["Roche", "Sol"],
+        created: new Date()
+    },
+    {
+        id: 18,
+        hp: 18,
+        cp: 7,
+        name: "Ponyta",
+        picture: "https://www.pokepedia.fr/images/8/8f/Ponyta-RFVF.png",
+        types: ["Feu"],
+        created: new Date()
+    },
+    {
+        id: 19,
+        hp: 21,
+        cp: 6,
+        name: "Ramoloss",
+        picture: "https://www.pokepedia.fr/images/5/5a/Ramoloss-RFVF.png",
+        types: ["Eau", "Psy"],
+        created: new Date()
     }
 ]
